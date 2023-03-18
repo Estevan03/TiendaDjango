@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from appUsuarios.models import Usuario
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ class MyAccountManager (BaseUserManager):
             username = username,
             first_name = first_name,
             last_name = last_name,
-            )
+        )
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -31,7 +32,7 @@ class MyAccountManager (BaseUserManager):
             last_name = last_name,
         )
         user.is_admin= True
-        user.is_activate = True
+        user.is_active = True
         user.is_staff = True
         user.is_superadmin = True
         user.save(using=self._db)
@@ -74,3 +75,17 @@ class Usuario(AbstractBaseUser):
     
     class Meta:
         verbose_name_plural = "Usuarios"
+
+
+class Carro(models.Model):
+    ESTADO_PROD = (
+        ('activo', 'activo'),
+        ('comprado', 'comprado'),
+        ('anulado', 'anulado'),
+    )
+    
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=False)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, null=False)
+    cantidad = models.IntegerField(null=False, default= 1)
+    valUnit = models.DecimalField(max_digits=8, decimal_places=2)
+    estado = models.CharField(max_length=20, choices=ESTADO_PROD, default='activo')
