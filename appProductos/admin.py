@@ -16,10 +16,10 @@ class ProductoAdmin(admin.ModelAdmin):
 admin.site.register(Producto, ProductoAdmin)
 
 #---------------------------------------------
-#class CarroAdmin(admin.ModelAdmin):
-    #list_display = ['usuario','producto', 'cantidad', 'estado']
+class CarroAdmin(admin.ModelAdmin):
+    list_display = ['usuario','producto', 'cantidad', 'estado']
     
-    #admin.site.register(Carro, CarroAdmin)
+admin.site.register(Carro, CarroAdmin)
 
 
 

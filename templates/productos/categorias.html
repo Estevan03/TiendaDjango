@@ -1,1 +1,25 @@
 {% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="mb-3 descripcion text-center">
+    <h4>{{titulo}}</h4>
+</div>
+<div class="row">
+    <table class="table">
+        <thead>
+            <th>Descripción Categoria</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for cat in categorias %}
+            <tr>
+                <td>{{cat.descripCategoria}}</td>
+                <td><a href="{% url 'productos' cat.id %}" id="listas" type="button" class="fa-solid fa-list"> Listar
+                        Productos</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% comment %} <button class="listas"><i class="fa-solid fa-list"><a href="{% url 'productos' cat.id %}"></a> Listar Productos</a></i></button> {% endcomment %}

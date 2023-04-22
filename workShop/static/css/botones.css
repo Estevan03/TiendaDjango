@@ -1,0 +1,109 @@
+.btn{
+    position: relative;
+    padding: 5px;
+    border: none;
+    background-color: #00c97f;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+.btn i{
+    margin: 0 17px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    transition:.2s;
+    background-color:#0b056c ;
+    color: white;
+}
+/* eliminar----------------- */
+#eliminar {
+    position: relative;
+    padding: 10px;
+    border: none;
+    background-color: #ca0303;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 15px;
+    text-decoration: none;
+}
+#eliminar i{
+    margin: 0 10px;
+}
+
+#eliminar:hover {
+    transform: scale(1.1);
+    transition:.5s;
+    background-color:#930808 ;
+}
+/* detalles------------------- */
+#detalles {
+    position: relative;
+    padding: 10px;
+    border: none;
+    background-color: #516dde;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+#detalles i{
+    margin: 0 10px;
+}
+
+#detalles:hover {
+    transform: scale(1.1);
+    transition:.2s;
+    background-color:#759308 ;
+
+}
+
+/* Listar Productos------------------- */
+#listas {
+    position: relative;
+    padding: 10px;
+    border: none;
+    background-color: #ff00dd;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+#listas i{
+    margin: 0 10px;
+}
+
+#listas:hover {
+    transform: scale(1.0);
+    transition:.2s;
+    background-color:#934a3a ;
+}
+
+/* agregar---------------- */
+#agregar {
+    position: relative;
+    padding: 10px;
+    border: none;
+    background-color: #d31616;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+#agregar i{
+    margin: 0 10px;
+}
+
+#agregar:hover {
+    transform: scale(1.1);
+    transition:.3s;
+    background-color:#934b08 ;
+}

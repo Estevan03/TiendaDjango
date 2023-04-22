@@ -1,13 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Django</title>
-</head>
-<body>
-    <h1>Bienvenido al WorkShop Django del centro de Industria</h1>
-</body>
-</html>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="contenido">
+  <div class="row">
+    <div class="col-6-offset-3 text-center" id="saludo">
+      <h1>Bienvenido al WorkShop del centro de industria</h1>
+    </div>
+  </div>
+</div>
+{% endblock %}

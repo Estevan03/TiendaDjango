@@ -14,21 +14,22 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-        {% for prod in carrito %}
-        <tr>
-            <th><input type="number" name="cantidad" id="cantidad_{{prod.id}}" onchange="cambiarCantidad({{prod.id}})" value="{{prod.cantidad}}" min="1" style="width: 80px;" data-preciou="{{prod.valUnit}}"></th>
-                <td><img src="/media/iconos/{{prod.imgPeque}}" alt="X"></td>
-                <td>{{ prod.nombre }}</td>
-                <td>{{prod.valUnit}}/{{prod.unidad}}</td>
-                <td id="total_{{prod.id}}">${{prod.total}}</td>
-                <td>
-                    <a href="{% url 'eliminar' prod.id %}" class="btn btn-danger btn-carrito">Eliminar</a>
-                    <a href="{% url 'un_producto' prod.prodId %}" class="btn btn-info btn-carrito">Detalle</a>
-                </td>
-            </tr>
-            {% endfor %}
-    </tbody>
+<tbody>
+    {% for prod in carrito %}
+    <tr>
+        <th><input type="number" name="cantidad" id="cantidad_{{prod.id}}"onchange="cambiarCantidad({{prod.id}})"
+        value="{{prod.cantidad}}" min="1" style="width: 80px;" data-preciou="{{prod.valUnit}}"></th>
+        <td><img src="/media/iconos/{{prod.imgPeque.url}}" alt="X"></td>
+        <td>{{ prod.nombre }}</td>
+        <td>{{prod.valUnit}}/{{prod.unidad}}</td>
+        <td id="total_{{prod.id}}">${{prod.total}}</td>
+        <td>
+            <a href="{% url 'eliminar' prod.id %}" class="btn btn-danger btn-carrito">Eliminar</a>
+            <a href="{% url 'un_producto' prod.prodId %}" class="btn btn-info btn-carrito">Detalle</a>
+        </td>
+    </tr>
+        {% endfor %}
+</tbody>
 </table>
 <div class="col-6 offset-4 row justify-content-center border-bottom">
     <div class="col-6 text-end">
@@ -43,7 +44,7 @@
         <h6 id="envio">${{ envio }}</h6>
         <h6><strong id="total">${{ total }}</strong></h6>
     </div>
-    <a href="#" class="btn btn-info btn-carrito">Pagar</a>
+    <a href="{% url 'pagar' %}" class="btn btn-info btn-carrito">Pagar</a>
 </div>
 <!-- FIN BLOQUE PRINCIPAL -->
 {% endblock %}
